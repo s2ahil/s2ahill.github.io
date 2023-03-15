@@ -26,7 +26,7 @@ main().then(() => console.log("hello run"));
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true });
+  await mongoose.connect(process.env.DB_connect,{useNewUrlParser: true });
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
