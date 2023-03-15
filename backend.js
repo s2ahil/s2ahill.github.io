@@ -15,12 +15,9 @@ app.use(express.static("images"))
 const dotenv=require("dotenv");
 dotenv.config()
 
-// mongoose.connect(
-//     process.env.DB_CONNECT,
-//     {useUnifiedTopology:true,useNewUrlParser:true},
 
 
-// ).then(()=>console.log("connected to db"))
+
 
 
 app.set("view engine", "ejs");
@@ -29,7 +26,7 @@ main().then(() => console.log("hello run"));
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.DB_CONNECT);
+  await mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true });
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
