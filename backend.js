@@ -71,11 +71,12 @@ app.get("/qna", (req, res) => {
 app.post("/qna", (req, res) => {
 
   const createDocument = async () => {
+      const currentDate = new Date();
     try {
       const info = commentInfo({
         name: req.body.name,
         comment: req.body.comment,
-        date: Date(),
+        date: currentDate,
       });
 
       const result = await info.save();
