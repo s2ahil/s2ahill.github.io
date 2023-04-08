@@ -56,8 +56,8 @@ app.get("/qna", (req, res) => {
     .then( (userData) => {
       data=JSON.stringify(userData)
       obj=JSON.parse(data)
-      date=obj[0]['date'].slice(0,10)
-      res.render('qnaSection',{data:userData,date:date});
+//       date=obj[0]['date'].slice(0,10)
+      res.render('qnaSection',{data:userData,date:obj});
      
      
     })
